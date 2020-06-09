@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seq-deployment
+  labels:
+    app: seq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seq
+  template:
+    metadata:
+      labels:
+        app: seq
+    spec:
+      containers:
+      - name: nginxseq
+        image: datalust/seq
+        ports:
+        - containerPort: 80
+        env:
+          -name: ACCEPT_EULA
+          value: "Y"
+          
