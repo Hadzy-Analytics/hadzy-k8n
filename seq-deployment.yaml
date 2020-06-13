@@ -17,6 +17,9 @@ spec:
       containers:
       - name: seq
         image: datalust/seq
+        volumeMounts:
+        - mountPath: /data
+          name: data-volume
         ports:
         - containerPort: 80
           name: ui
@@ -25,3 +28,7 @@ spec:
         env:
           - name: ACCEPT_EULA
             value: "Y"
+      volumes:
+        - name: data-volume
+          emptyDir: {}
+          
