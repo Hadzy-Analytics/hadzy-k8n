@@ -19,6 +19,9 @@ spec:
         image: datalust/seq
         ports:
         - containerPort: 80
+          name: seq-80
+        - containerPort: 5341
+          name: seq-5341
         env:
           - name: ACCEPT_EULA
             value: "Y"
