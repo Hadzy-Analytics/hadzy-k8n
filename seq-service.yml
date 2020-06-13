@@ -7,13 +7,11 @@ spec:
   selector:
     app: seq
   ports:
-    - name: port-http
+    - name: seq-ui
       protocol: TCP
-      port: 80
       targetPort: 80
       nodePort: 31291
-    - name: port-data-ingestion
+    - name: seq-data-ingestion
       protocol: TCP
-      port: 5341
       targetPort: 5341
       nodePort: 31292
