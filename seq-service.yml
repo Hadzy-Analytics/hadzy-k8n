@@ -9,9 +9,11 @@ spec:
   ports:
     - name: seq-ui
       protocol: TCP
+      port: 6000
       targetPort: 80
       nodePort: 31291
     - name: seq-data-ingestion
       protocol: TCP
+      port: 6001
       targetPort: 5341
       nodePort: 31292
