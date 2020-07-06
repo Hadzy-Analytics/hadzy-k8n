@@ -23,6 +23,9 @@ spec:
           ports:
             - containerPort: 8080
               name: ui
+            - containerPort: 50000
+              name: jnlp-port
+              protocol: TCP
       volumes:
         - name: jenkins-home
           emptyDir: {}
