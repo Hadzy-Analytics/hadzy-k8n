@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadzy-core-deployment
+  labels:
+    app: hadzy-core
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hadzy-core
+  template:
+    metadata:
+      labels:
+        app: hadzy-core
+    spec:
+      containers:
+      - name: hadzy-core
+        image: hadzyanalytics/hadzy-core:latest
+        ports:
+        - containerPort: 80
+          name: ui
+        env:
+          - name: ACCEPT_EULA
+            value: "Y"
+            
+          
