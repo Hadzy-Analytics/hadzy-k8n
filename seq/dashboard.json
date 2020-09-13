@@ -1,0 +1,375 @@
+{
+  "OwnerId": null,
+  "Title": "Overview",
+  "IsProtected": true,
+  "SignalExpression": null,
+  "Charts": [
+    {
+      "Id": "chart-6",
+      "Title": "All Events",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-7",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": null,
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-8",
+      "Title": "Count by Level",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-9",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": null,
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Level"
+          ],
+          "DisplayStyle": {
+            "Type": "Pie",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 4,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-10",
+      "Title": "Errors and Exceptions",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-11",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@Level = 'Error' or @Level = 'Fatal' or @Level = 'Critical'",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": true,
+            "SuppressLegend": false,
+            "Palette": "Reds"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-12",
+      "Title": "Distinct Event Types",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-13",
+          "Measurements": [
+            {
+              "Value": "count(distinct(@EventType))",
+              "Label": "count"
+            }
+          ],
+          "Where": null,
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Value",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 4,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-24",
+      "Title": "Total warnings",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-25",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@Level = 'Warning'",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": true,
+            "SuppressLegend": false,
+            "Palette": "OrangePurple"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-20",
+      "Title": "Videos started to load",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-21",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@EventType = 0x9F088251",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-28",
+      "Title": "Searches",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-29",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@Message like '%search terms for%' or @Exception like '%search terms for%'",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Blues"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-33",
+      "Title": "Videos loaded",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-34",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@EventType = 0xAB69DAC4",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-30",
+      "Title": "Filters",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-31",
+          "Measurements": [
+            {
+              "Value": "count(*)",
+              "Label": "count"
+            }
+          ],
+          "Where": "@Message like '%time filter%' or @Exception like '%time filter%'",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Bar",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Blues"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 6,
+        "HeightRows": 1
+      }
+    },
+    {
+      "Id": "chart-26",
+      "Title": "Total comments loaded",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": "chartquery-27",
+          "Measurements": [
+            {
+              "Value": "ToIsoString(@Timestamp)",
+              "Label": "Time"
+            },
+            {
+              "Value": "@Message",
+              "Label": "Message"
+            },
+            {
+              "Value": "@Timestamp",
+              "Label": "TimeStamp"
+            }
+          ],
+          "Where": "@EventType = 0x19693679",
+          "SignalExpression": null,
+          "GroupBy": [],
+          "DisplayStyle": {
+            "Type": "Table",
+            "LineFillToZeroY": false,
+            "LineShowMarkers": true,
+            "BarOverlaySum": false,
+            "SuppressLegend": false,
+            "Palette": "Default"
+          },
+          "Alerts": [],
+          "Having": null,
+          "OrderBy": [
+            "TimeStamp Desc"
+          ],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 7,
+        "HeightRows": 4
+      }
+    }
+  ],
+  "Id": "dashboard-14",
+  "Links": {
+    "Self": "api/dashboards/dashboard-14?version=3",
+    "Group": "api/dashboards/resources"
+  }
+}
