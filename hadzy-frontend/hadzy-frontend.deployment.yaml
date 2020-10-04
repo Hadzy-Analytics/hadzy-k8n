@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadzy-frontend-deployment
+  labels:
+    app: hadzy-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hadzy-frontend
+  template:
+    metadata:
+      labels:
+        app: hadzy-frontend
+    spec:
+      containers:
+      - name: hadzy-frontend
+        image: hadzyanalytics/hadzy-frontend:latest
+        ports:
+        - containerPort: 80
+          name: ui
+        env:
+          - name: ACCEPT_EULA
+            value: "Y"
+      imagePullSecrets:
+        - name: regcred
+            
+          
